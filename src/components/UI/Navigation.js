@@ -33,8 +33,8 @@ class Navigation extends PureComponent {
       <AppBar position='static' >
 
         {signedIn ?
-          <Button label="Sign out" onClick={this.signOut.bind(this)}>Sign out</Button> :
-          <Button label="Sign up" onClick={this.signUp}>Sign up</Button>
+          <Button onClick={this.signOut.bind(this)}>Sign out</Button> :
+          <Button onClick={this.signUp}>Sign up</Button>
         }
       </AppBar>
     )
