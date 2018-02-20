@@ -7,7 +7,6 @@ import signOut from '../../actions/user/sign-out'
 import AppBar from 'material-ui/AppBar'
 import Typography from 'material-ui/Typography'
 import Toolbar from 'material-ui/Toolbar'
-import IconButton from 'material-ui/IconButton'
 import Button from 'material-ui/Button'
 
 const styles = {

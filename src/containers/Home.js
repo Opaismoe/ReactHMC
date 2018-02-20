@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
@@ -23,7 +22,7 @@ class Home extends PureComponent {
   render() {
     return(
       <div>
-        <img className='headerImg' src={headerImg}/>
+        <img alt='dirk hartogh' className='headerImg' src={headerImg}/>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
             Hallo,
