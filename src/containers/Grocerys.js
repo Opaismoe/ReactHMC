@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
+import { Footer, GroceryList }from '../components/grocery/'
+import AddGrocery from './AddGrocery'
+import VisibleGroceryList from './VisibleGroceryList'
 import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
@@ -31,6 +34,9 @@ class Grocerys extends PureComponent {
           <Typography variant='body1'>
             Huishoudgeld
           </Typography>
+          <AddGrocery/>
+          <VisibleGroceryList/>
+          <Footer/>
         </Paper>
       </div>
     )
