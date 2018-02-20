@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Reboot from 'material-ui/Reboot'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
-import muiTheme from './styles/theme'
 import Navigation from './components/UI/Navigation'
 import Routes from './routes'
 
@@ -27,13 +26,13 @@ const theme = createMuiTheme({
     primary: {
       light: '#bedee8',
       main: '#0081aa',
-      dark: '#0c2830',
-      contrastText: '#b1ac7a'
+      dark: '#136880',
+      contrastText: '#cfc029'
     },
     secondary: {
       light: '#ffdc60',
       main: '#e6a435',
-      dark: '#ab8500',
+      dark: '#c19600',
       contrastText: '#000000'
     }
   },
@@ -61,10 +60,6 @@ const theme = createMuiTheme({
 class App extends Component {
   static childContextTypes = {
     muiTheme: PropTypes.object.isRequired,
-  }
-
-  getChildContext() {
-    return { muiTheme }
   }
 
   render() {

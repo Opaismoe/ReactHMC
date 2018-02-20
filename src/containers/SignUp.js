@@ -234,6 +234,7 @@ export class SignUp extends PureComponent {
           <Button
             style={{float:'right'}}
             variant='raised'
+            color='primary'
             onClick={this.submitForm.bind(this)}>
             Submit
           </Button>

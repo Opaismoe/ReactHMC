@@ -51,13 +51,13 @@ class Navigation extends PureComponent {
           <Typography variant="headline" color="inherit" style={styles.flex}>
             HMS
           </Typography>
-          <Typography variant="p" color="inherit" style={styles.flex}>
-            Household Managment System
+          <Typography variant="body1" color="inherit" style={styles.flex}>
+            Household Management System
           </Typography>
-          <Button style={{float:'right'}} onClick={this.signIn.bind(this)}>Sign in</Button>
+          <Button variant='raised' color='secondary' style={{float:'right'}} onClick={this.signIn.bind(this)}>Sign in</Button>
           {signedIn ?
-            <Button style={{float:'right', width:100}} onClick={this.signOut.bind(this)}>Sign out</Button> :
-            <Button style={{float:'right', width:100}} onClick={this.signUp}>Sign up</Button>
+            <Button variant='raised' color='secondary'  style={{float:'right', width:100, marginLeft:10}} onClick={this.signOut.bind(this)}>Sign out</Button> :
+            <Button variant='raised' color='secondary'  style={{float:'right', width:100, marginLeft:10}} onClick={this.signUp}>Sign up</Button>
           }
         </Toolbar>
       </AppBar>
