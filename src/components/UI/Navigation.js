@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
+import { Link } from 'react-router-dom'
 import signOut from '../../actions/user/sign-out'
 import AppBar from 'material-ui/AppBar'
 import Typography from 'material-ui/Typography'
@@ -51,7 +52,12 @@ class Navigation extends PureComponent {
           <Typography variant="headline" color="inherit" style={styles.flex}>
             HMS
           </Typography>
-          <Typography variant="body1" color="inherit" style={styles.flex}>
+          <Typography
+            variant="body1"
+            color="inherit"
+            style={styles.flex}
+            component={Link}
+            to='/'>
             Household Management System
           </Typography>
           <Button variant='raised' color='secondary' style={{float:'right'}} onClick={this.signIn.bind(this)}>Sign in</Button>

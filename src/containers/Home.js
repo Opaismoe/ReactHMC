@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
@@ -20,7 +21,6 @@ const styles = ({
 
 class Home extends PureComponent {
   render() {
-
     return(
       <div>
         <img className='headerImg' src={headerImg}/>
@@ -35,7 +35,8 @@ class Home extends PureComponent {
             style={styles.button}
             variant='raised'
             color='primary'
-            onClick={console.log('link1')}>
+            component={Link}
+            to="/grocerys">
             Boodschappen
           </Button>
           <Button

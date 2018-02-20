@@ -5,7 +5,8 @@ import { Route } from 'react-router-dom'
 import {
   Home,
   SignIn,
-  SignUp
+  SignUp,
+  Grocerys
 } from './containers'
 
 export default class Routes extends Component {
@@ -13,6 +14,7 @@ export default class Routes extends Component {
     return (
       <div>
         <Route exact path="/" component={Home} />
+        <Route path="/grocerys" component={Grocerys} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/sign-up" component={SignUp} />
       </div>
