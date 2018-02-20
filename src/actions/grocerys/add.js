@@ -13,12 +13,17 @@ let nextGroceryId = 0
 
 export const ADD_GROCERY = 'ADD_GROCERY'
 
-export const addGrocery = () => {
+export const addGrocery = (text) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
     api.post('/grocerys', {})
-      .then(() => {
+      .then(result => {
+        dispatch({
+          type: ADD_GROCERY,
+          payload: result.body
+        })
+        console.log(result.body)
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
       })
@@ -31,9 +36,6 @@ export const addGrocery = () => {
       })
   }
 }
-
-
-
 
 //
 // export const addGrocery = text => {

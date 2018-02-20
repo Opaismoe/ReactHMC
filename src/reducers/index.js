@@ -10,4 +10,5 @@ export default {
   loadError,
   currentUser,
   grocerys,
+  visibilityFilter,
 }

@@ -7,6 +7,7 @@ const grocerys = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
+          price: action.price,
           completed: false
         }
       ]

@@ -1,33 +1,57 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { FormContorlLabel, FormHelperText, FormControl } from 'material-ui/Form'
+import TextField from 'material-ui/TextField'
+import Typography from 'material-ui/Typography'
 import { addGrocery } from '../actions/grocerys/add'
 
-let AddGrocery = ({ dispatch }) => {
-  let input
+export class AddGrocery extends PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      text: '',
+      price: 0,
+      completed: false, 
+    }
+  }
+  
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    })
+  }
+  
+  submitForm(event) {
+    event.preventDefault() 
+    this.props.addGrocery({ ...this.state})
+    return false
+  }
+  
+  render() {
+    const { text, price, completed } = this.state
+    
     return (
-    <div>
-      <form
-        onSubmit={e => {
-          e.preventDefault()
-          if (!input.value.trim()) {
-            return
-          }
-          dispatch(addGrocery(input.value))
-          input.value = ''
-        }}
-      >
-        <input
-          ref={node => {
-            input = node
-          }}
-        />
-        <button type="submit">
-          Add Grocery
-        </button>
-      </form>
-    </div>
-  )
+      <div>
+        <form onSubmit={this.submitForm.bind(this)}>
+          <FormControl>
+            <TextField
+              id='text'
+              type='text'
+              label='naam van product'
+              onChange={this.handleChange('text')}
+            />
+          <FormHelperText id='text-error-text'>
+            {this.state.textError}
+          </FormHelperText>
+          </FormControl>
+        </form>
+      </div>
+    )
+  }
 }
-AddGrocery = connect()(AddGrocery)
 
-export default AddGrocery
+const mapStateToProps = ({ AddGrocery }) => ({ AddGrocery })
+
+export default connect (mapStateToProps, {
+  addGrocery,
+})(AddGrocery)
