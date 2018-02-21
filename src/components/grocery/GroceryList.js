@@ -16,7 +16,8 @@ GroceryList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
+      text: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired
     }).isRequired
   ).isRequired,
   onGroceryClick: PropTypes.func.isRequired

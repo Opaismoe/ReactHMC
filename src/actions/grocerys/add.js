@@ -6,18 +6,14 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
+export const ADD_GROCERY = 'ADD_GROCERY'
 const api = new API()
 
-
-let nextGroceryId = 0
-
-export const ADD_GROCERY = 'ADD_GROCERY'
-
-export const addGrocery = (text) => {
+export const addGrocery = (grocery) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    api.post('/grocerys', {})
+    api.post('/grocerys', grocery)
       .then(result => {
         dispatch({
           type: ADD_GROCERY,
