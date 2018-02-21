@@ -5,7 +5,6 @@ import TextField from 'material-ui/TextField'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
 import { addGrocery } from '../../actions/grocerys/add'
-import { fetchGrocerys } from '../../actions/grocerys/fetch'
 
 export class AddGrocery extends PureComponent {
   constructor() {
@@ -16,10 +15,6 @@ export class AddGrocery extends PureComponent {
       completed: false,
     }
   }
-
-  // componentWillMount() {
-  //   this.props.fetch()
-  // }
 
   handleChange = name => event => {
     this.setState({
