@@ -13,13 +13,12 @@ export const addGrocery = (newGrocery) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    api.post('/grocerys')
+    api.post('/grocerys', newGrocery)
       .then(result => {
         dispatch({
           type: ADD_GROCERY,
           payload: newGrocery
         })
-        console.log(newGrocery)
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
       })
