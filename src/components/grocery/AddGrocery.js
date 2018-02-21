@@ -4,8 +4,8 @@ import { FormContorlLabel, FormHelperText, FormControl } from 'material-ui/Form'
 import TextField from 'material-ui/TextField'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
-import { addGrocery } from '../actions/grocerys/add'
-import { fetchGrocerys } from '../actions/grocerys/fetch'
+import { addGrocery } from '../../actions/grocerys/add'
+import { fetchGrocerys } from '../../actions/grocerys/fetch'
 
 export class AddGrocery extends PureComponent {
   constructor() {
