@@ -9,7 +9,7 @@ import {
 export const ADD_GROCERY = 'ADD_GROCERY'
 const api = new API()
 
-export const addGrocery = (grocery) => {
+export const addGrocery = (newGrocery) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
@@ -17,9 +17,9 @@ export const addGrocery = (grocery) => {
       .then(result => {
         dispatch({
           type: ADD_GROCERY,
-          payload: grocery
+          payload: newGrocery
         })
-        console.log(grocery)
+        console.log(newGrocery)
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
       })
