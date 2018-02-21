@@ -3,7 +3,6 @@ import SignUp from './SignUp'
 import Home from './Home'
 import Grocerys from './Grocerys'
 import FilterLink from './FilterLink'
-import VisibleGroceryList from './VisibleGroceryList'
 
 export {
   SignIn,
@@ -11,5 +10,4 @@ export {
   Home,
   Grocerys,
   FilterLink,
-  VisibleGroceryList,
 }

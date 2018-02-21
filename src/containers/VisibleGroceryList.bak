@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleDone } from '../actions/grocerys/add'
-import GroceryList from '../components/grocery/GroceryList'
+// import GroceryList from '../components/grocery/GroceryList'
 
 const getVisibleGrocerys = (grocerys, filter) => {
   switch (filter) {
@@ -28,9 +28,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const VisibleGroceryList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GroceryList)
+// const VisibleGroceryList = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(GroceryList)
 
 export default VisibleGroceryList
