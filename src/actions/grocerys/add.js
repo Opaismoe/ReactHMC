@@ -10,7 +10,6 @@ export const ADD_GROCERY = 'ADD_GROCERY'
 const api = new API()
 
 export const addGrocery = (grocery) => {
-  console.log(grocery)
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
@@ -20,7 +19,7 @@ export const addGrocery = (grocery) => {
           type: ADD_GROCERY,
           payload: grocery
         })
-        console.log(result.body)
+        console.log(grocery)
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
       })
