@@ -17,8 +17,9 @@ export const fetchGrocerys = () => {
 
     api.get(path)
       .then(res => {
-        dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: FETCHED_GROCERYS, payload: res.body })
+        dispatch({ type: APP_DONE_LOADING })
+        dispatch({ type: LOAD_SUCCESS })
       })
       .catch(error => {
         dispatch({ type: APP_DONE_LOADING })
