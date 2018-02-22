@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import Paper from 'material-ui/Paper'
+import Typography from 'material-ui/Typography'
 
 export const groceryShape = PropTypes.shape({
   _id: PropTypes.string.isRequired,
@@ -18,8 +20,14 @@ class Grocery extends PureComponent {
 
     return (
       <div>
-        <h1>{text}</h1>
-        <h1>{price}</h1>
+        <Paper>
+          <Typography variant='display1'>
+            {text}
+          </Typography>
+          <Typography variant='display1'>
+            {price}
+          </Typography>
+        </Paper>
       </div>
     )
   }

@@ -58,9 +58,6 @@ const theme = createMuiTheme({
 })
 
 class App extends Component {
-  static childContextTypes = {
-    muiTheme: PropTypes.object.isRequired,
-  }
 
   render() {
     return (

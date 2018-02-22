@@ -15,7 +15,6 @@ class GroceryList extends PureComponent {
   }
 
   renderGrocerys = (grocery, index) => {
-    console.log(grocery)
     return <Grocery key={index} { ...grocery } />
   }
 
