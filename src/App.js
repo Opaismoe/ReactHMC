@@ -1,6 +1,4 @@
-// src/App.js
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import Reboot from 'material-ui/Reboot'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 import Navigation from './components/UI/Navigation'
