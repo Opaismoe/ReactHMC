@@ -46,7 +46,7 @@ class Home extends PureComponent {
             Week taken
           </Button>
           <Button
-            style={styles.button, {float:'left'}}
+            style={{float:'left'}}
             variant='raised'
             color='secondary'
             onClick={console.log('link1')}>
