@@ -2,28 +2,27 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGrocerys } from '../../actions/grocerys/fetch'
-import Grocery from './Grocery'
+import Grocery, { groceryShape } from './Grocery'
 
 
 class GroceryList extends PureComponent {
   static propTypes = {
-    text: PropTypes.string,
-    price: PropTypes.number,
-    completed: PropTypes.bool
+    grocerys: PropTypes.arrayOf(groceryShape).isRequired
   }
 
   componentWillMount() {
-    this.props.dispatch(fetchGrocerys())
+    this.props.fetch()
   }
 
   renderGrocerys = (grocery, index) => {
+    console.log(grocery)
     return <Grocery key={index} { ...grocery } />
   }
 
   render() {
     return (
       <div>
-        temp info
+        {this.props.grocerys.map(this.renderGrocerys)}
       </div>
     )
   }
