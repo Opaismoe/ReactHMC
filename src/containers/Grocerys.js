@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
-import { Footer, AddGrocery, GroceryList }from '../components/grocery/'
+import { AddGrocery, GroceryList }from '../components/grocery/'
 import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 import '../assets/stylesheets/Home.css'
@@ -31,7 +31,6 @@ class Grocerys extends PureComponent {
           </Typography>
           <AddGrocery/>
           <GroceryList/>
-          <Footer/>
         </Paper>
       </div>
     )
