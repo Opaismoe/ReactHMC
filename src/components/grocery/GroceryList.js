@@ -4,8 +4,12 @@ import { connect } from 'react-redux'
 import { fetchGrocerys } from '../../actions/grocerys/fetch'
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
 import Paper from 'material-ui/Paper'
-import Grocery, { groceryShape } from './Grocery'
 
+export const groceryShape = PropTypes.shape({
+  text: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  completed: PropTypes.bool,
+})
 
 class GroceryList extends PureComponent {
   static propTypes = {
@@ -14,10 +18,6 @@ class GroceryList extends PureComponent {
 
   componentWillMount() {
     this.props.fetch()
-  }
-
-  renderGrocerys = (grocery, index) => {
-    return <Grocery key={index} { ...grocery } />
   }
 
   render() {

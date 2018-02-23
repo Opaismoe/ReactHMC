@@ -15,13 +15,8 @@ class Grocery extends PureComponent {
   }
 
   render() {
-    const { text, price, completed } = this.props
-
     return (
       <div>
-        <Paper className='groceryPaper'>
-          whaaaattttt!!
-        </Paper>
       </div>
     )
   }
