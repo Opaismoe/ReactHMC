@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGrocerys } from '../../actions/grocerys/fetch'
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
+import Paper from 'material-ui/Paper'
 import Grocery, { groceryShape } from './Grocery'
 
 
@@ -21,7 +23,26 @@ class GroceryList extends PureComponent {
   render() {
     return (
       <div>
-        {this.props.grocerys.map(this.renderGrocerys)}
+        <Paper>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Product</TableCell>
+                <TableCell numeric>Price</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.props.grocerys.map(grocery => {
+                return (
+                  <TableRow key={grocery.id}>
+                    <TableCell>{grocery.text}</TableCell>
+                    <TableCell numeric>{grocery.price}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
       </div>
     )
   }
