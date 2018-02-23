@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { FormHelperText, FormControl } from 'material-ui/Form'
+import Input, { InputLabel, InputAdornment } from 'material-ui/Input'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import { addGrocery } from '../../actions/grocerys/add'
@@ -28,6 +29,7 @@ export class AddGrocery extends PureComponent {
   }
 
   render() {
+    
     return (
       <div className='addGroceryForm'>
         <form onSubmit={this.submitForm.bind(this)}>
@@ -43,16 +45,17 @@ export class AddGrocery extends PureComponent {
             </FormHelperText>
           </FormControl>
           <FormControl>
-            <TextField
-              id='price'
-              type='number'
-              label='prijs'
+            <InputLabel htmlFor="prijs" shrink={true}>Prijs</InputLabel>
+            <Input
+              id="price"
+              type='float'
               onChange={this.handleChange('price')}
+              startAdornment={<InputAdornment position="start">$</InputAdornment>}
             />
-            <FormHelperText id='text-error-text'>
-              {this.state.textError}
-            </FormHelperText>
           </FormControl>
+          <FormHelperText id='price-error-text'>
+            {this.state.priceError}
+          </FormHelperText>
           <Button type='submit'>Submit</Button>
         </form>
       </div>

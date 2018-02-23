@@ -12,9 +12,9 @@ const api = new API()
 
 export const fetchGrocerys = () => {
   return dispatch => {
-    const path = '/grocerys'
     dispatch({ type: APP_LOADING })
 
+    const path = '/grocerys'
     api.get(path)
       .then(res => {
         dispatch({ type: FETCHED_GROCERYS, payload: res.body })

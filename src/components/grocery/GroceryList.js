@@ -14,16 +14,30 @@ export const groceryShape = PropTypes.shape({
 
 class GroceryList extends PureComponent {
   static propTypes = {
-    grocerys: PropTypes.arrayOf(groceryShape).isRequired
+    grocerys: PropTypes.arrayOf(groceryShape).isRequired,
   }
 
   componentWillMount() {
     this.props.fetch()
   }
 
+  totalPrice() {
+    let totalAmount = 80
+    this.props.grocerys.map(grocery => {
+      return totalAmount -= grocery.price
+    })
+    return this.RenderTotalAmount(totalAmount)
+  }
+
+  RenderTotalAmount(totalAmount) {
+    console.log(totalAmount)
+    return <h1>{totalAmount}</h1>
+  }
+
   render() {
     return (
       <div>
+        <button onClick={this.totalPrice.bind(this)}>click me for total price</button>
         <Paper>
           <Table>
             <TableHead>
