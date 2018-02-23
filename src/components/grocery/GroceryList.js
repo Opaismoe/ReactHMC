@@ -6,6 +6,7 @@ import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Ta
 import Paper from 'material-ui/Paper'
 
 export const groceryShape = PropTypes.shape({
+  _id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   completed: PropTypes.bool,
@@ -34,7 +35,8 @@ class GroceryList extends PureComponent {
             <TableBody>
               {this.props.grocerys.map(grocery => {
                 return (
-                  <TableRow key={grocery.id}>
+                  <TableRow key={grocery._id}>
+                    {console.log(grocery._id)}
                     <TableCell>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                   </TableRow>
