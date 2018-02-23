@@ -36,7 +36,6 @@ class GroceryList extends PureComponent {
               {this.props.grocerys.map(grocery => {
                 return (
                   <TableRow key={grocery._id}>
-                    {console.log(grocery._id)}
                     <TableCell>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                   </TableRow>
