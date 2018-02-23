@@ -4,6 +4,7 @@ import { FormHelperText, FormControl } from 'material-ui/Form'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import { addGrocery } from '../../actions/grocerys/add'
+import '../../assets/stylesheets/AddGrocery.css'
 
 export class AddGrocery extends PureComponent {
   constructor() {
@@ -28,7 +29,7 @@ export class AddGrocery extends PureComponent {
 
   render() {
     return (
-      <div>
+      <div className='addGroceryForm'>
         <form onSubmit={this.submitForm.bind(this)}>
           <FormControl>
             <TextField
