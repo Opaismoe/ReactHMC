@@ -18,7 +18,6 @@ const styles = ({
 })
 
 class Grocerys extends PureComponent {
-
   render() {
     return(
       <div>

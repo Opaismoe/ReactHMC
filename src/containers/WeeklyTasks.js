@@ -17,7 +17,12 @@ class WeeklyTasks extends PureComponent {
       <div>
         <img alt='dirk hartogh' className='headerImg' src={headerImg}/>
         <Paper style={styles.paper}>
-          well hello there
+          <Typography variant='display1'>
+            Taken
+          </Typography>
+          <Typography variant='body1'>
+            weekelijkse huishoud taken
+          </Typography>
         </Paper>
       </div>
     )
