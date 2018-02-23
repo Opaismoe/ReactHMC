@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
 
 export const groceryShape = PropTypes.shape({
   _id: PropTypes.string.isRequired,
@@ -16,17 +17,26 @@ class Grocery extends PureComponent {
   }
 
   render() {
-    const { _id, text, price, completed } = this.props
+    const { _id ,text, price, completed } = this.props
 
     return (
       <div>
-        <Paper>
-          <Typography variant='display1'>
-            {text}
-          </Typography>
-          <Typography variant='display1'>
-            {price}
-          </Typography>
+        <Paper className='groceryPaper'>
+          <Table>
+           <TableHead>
+             <TableRow>
+               <TableCell>Product</TableCell>
+               <TableCell numeric>Price</TableCell>
+               <TableCell numeric>Who?</TableCell>
+             </TableRow>
+           </TableHead>
+           <TableBody>
+             <TableRow key={_id}>
+               <TableCell>{text}</TableCell>
+               <TableCell numeric>{price}</TableCell>
+             </TableRow>
+           </TableBody>
+         </Table>
         </Paper>
       </div>
     )
