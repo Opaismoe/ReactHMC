@@ -6,7 +6,8 @@ import {
   Home,
   SignIn,
   SignUp,
-  Grocerys
+  Grocerys,
+  WeeklyTasks
 } from './containers'
 
 export default class Routes extends Component {
@@ -15,6 +16,7 @@ export default class Routes extends Component {
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/grocerys" component={Grocerys} />
+        <Route path="/tasks" component={WeeklyTasks} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/sign-up" component={SignUp} />
       </div>

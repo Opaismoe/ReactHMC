@@ -42,14 +42,16 @@ class Home extends PureComponent {
             style={styles.button}
             variant='raised'
             color='primary'
-            onClick={console.log('link1')}>
+            component={Link}
+            to='/tasks'>
             Week taken
           </Button>
           <Button
             style={{float:'left'}}
             variant='raised'
             color='secondary'
-            onClick={console.log('link1')}>
+            component={Link}
+            to='/CatsArePeopleToo'>
             Fotos van katten bekijken
           </Button>
         </Paper>
