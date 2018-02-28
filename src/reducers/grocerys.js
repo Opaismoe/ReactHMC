@@ -10,12 +10,21 @@ export default function(state = [], {type, payload} = {}) {
     case FETCHED_GROCERYS:
       return payload.slice()
     case REMOVE_GROCERY:
-      return state.map(grocery =>
-        (grocery.id === payload.id)
-        ? {...grocery, completed: !grocery.completed}
-        : grocery
-      )
+      return payload.slice()
     default:
       return state
   }
 }
+
+
+
+
+
+
+
+// toggle
+// return state.map(grocery =>
+//   (grocery.id === payload.id)
+//   ? {...grocery, completed: !grocery.completed}
+//   : grocery
+// )

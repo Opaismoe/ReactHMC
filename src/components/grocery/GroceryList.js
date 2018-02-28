@@ -14,6 +14,11 @@ export const groceryShape = PropTypes.shape({
 })
 
 class GroceryList extends PureComponent {
+  constructor(props) {
+    super(props)
+      this.removeGrocery = this.removeGrocery.bind(this)
+  }
+
   static propTypes = {
     grocerys: PropTypes.arrayOf(groceryShape).isRequired
   }
@@ -23,7 +28,7 @@ class GroceryList extends PureComponent {
   }
 
   removeGrocery() {
-    this.props.removeGrocery()
+    this.removeGrocery()
   }
 
   render() {
@@ -43,7 +48,7 @@ class GroceryList extends PureComponent {
               {this.props.grocerys.map(grocery => {
                 return (
                   <TableRow key={grocery._id}>
-                    <TableCell onClick={this.removeGrocery.bind(this)}>{grocery.text}</TableCell>
+                    <TableCell onClick={this.removeGrocery}>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                   </TableRow>
                 );

@@ -14,11 +14,12 @@ export const removeGrocery = (id) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    api.delete('/grocerys/:id')
+    api.delete('/grocerys', id)
+      console.log(id)
       .then(result => {
         dispatch({
           type: REMOVE_GROCERY,
-          payload: {...id}
+          payload: id
         })
         dispatch({ type: APP_DONE_LOADING })
         dispatch({ type: LOAD_SUCCESS })
