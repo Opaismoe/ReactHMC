@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGrocerys } from '../../actions/grocerys/fetch'
+import { removeGrocery } from '../../actions/grocerys/remove'
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
 import Paper from 'material-ui/Paper'
 
@@ -21,7 +22,13 @@ class GroceryList extends PureComponent {
     this.props.fetch()
   }
 
+  removeGrocery() {
+    this.props.removeGrocery()
+  }
+
   render() {
+    const { id } = this.props.grocerys
+
     return (
       <div>
         <Paper>
@@ -36,7 +43,7 @@ class GroceryList extends PureComponent {
               {this.props.grocerys.map(grocery => {
                 return (
                   <TableRow key={grocery._id}>
-                    <TableCell>{grocery.text}</TableCell>
+                    <TableCell onClick={this.removeGrocery.bind(this)}>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                   </TableRow>
                 );
@@ -50,6 +57,6 @@ class GroceryList extends PureComponent {
 }
 
 const mapStateToProps = ({ grocerys }) => ({ grocerys })
-const mapDispatchToProps = { fetch: fetchGrocerys }
+const mapDispatchToProps = { fetch: fetchGrocerys, removeGrocery }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GroceryList)

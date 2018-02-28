@@ -45,7 +45,7 @@ export class AddGrocery extends PureComponent {
           <FormControl>
             <TextField
               id='price'
-              type='number'
+              type='float'
               label='prijs'
               onChange={this.handleChange('price')}
             />
