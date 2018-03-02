@@ -20,8 +20,10 @@ export class AddGrocery extends PureComponent {
 
   handleChange = name => event => {
     this.setState({
-      [name]: event.target.value
+      name: event.target.value
     })
+    console.log(name);
+    
   }
 
   submitForm(event) {
@@ -52,9 +54,7 @@ export class AddGrocery extends PureComponent {
               id='price'
               type='float'
               label='prijs'
-
               onChange={this.handleChange('price')}
-              startAdornment={<InputAdornment position="start">$</InputAdornment>}
             />
           </FormControl>
           <FormHelperText id='price-error-text'>

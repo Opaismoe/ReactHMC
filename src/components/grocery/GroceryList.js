@@ -17,23 +17,17 @@ export const groceryShape = PropTypes.shape({
 class GroceryList extends PureComponent {
   constructor(props) {
     super(props)
+      this.state = {
+        totalPrice: 0,
+        totalAmount: 10,
+      }
+      this.totalPrice = this.totalPrice.bind(this)
       this.removeGrocery = this.removeGrocery.bind(this)
   }
 
   static propTypes = {
     grocerys: PropTypes.arrayOf(groceryShape).isRequired,
-  }
-
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       totalPrice: 0,
-       totalAmount: 10,
-    }
-    this.totalPrice = this.totalPrice.bind(this)
-  }
-  
+  }  
   
   componentWillMount() {
     this.props.fetch()
@@ -65,7 +59,7 @@ class GroceryList extends PureComponent {
       <div>
         <button onClick={this.totalPrice}>click me for total price</button>
           {this.props.grocerys.map(groc => {
-            console.log(groc.price)
+            return console.log(groc.price)
           })
           }
         <Paper>
@@ -90,8 +84,8 @@ class GroceryList extends PureComponent {
               })}
             </TableBody>
           </Table>
-            <span style={{ float:'right' }}>total <h3>{totalPrice}</h3></span>
-            <span style={{ float:'left' }}>left in pot; <h3>{totalAmount}</h3></span>
+            <span style={{ float:'right' }}>total <h3>{this.state.totalPrice}</h3></span>
+            <span style={{ float:'left' }}>left in pot; <h3>{this.state.totalAmount}</h3></span>
         </Paper>
       </div>
     )

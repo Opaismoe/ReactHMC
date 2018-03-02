@@ -30,6 +30,7 @@ class Grocerys extends PureComponent {
             Huishoudgeld
           </Typography>
           <AddGrocery/>
+
           <GroceryList/>
         </Paper>
       </div>
