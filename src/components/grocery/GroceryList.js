@@ -28,11 +28,12 @@ class GroceryList extends PureComponent {
   }
 
   removeGrocery() {
-    this.removeGrocery()
+    const { id } = this.props.grocerys
+    console.log(id)
+    return false
   }
 
   render() {
-    const { id } = this.props.grocerys
 
     return (
       <div>
