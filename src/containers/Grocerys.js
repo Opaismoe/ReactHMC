@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
 import { AddGrocery, GroceryList }from '../components/grocery/'
-import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 import '../assets/stylesheets/Home.css'
 
@@ -21,7 +20,6 @@ class Grocerys extends PureComponent {
   render() {
     return(
       <div>
-        <img alt='dirk hartogh' className='headerImg' src={headerImg}/>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
             Boodschappen
@@ -32,6 +30,7 @@ class Grocerys extends PureComponent {
           <AddGrocery/>
 
           <GroceryList/>
+          
         </Paper>
       </div>
     )

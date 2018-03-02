@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
 import { Link } from 'react-router-dom'
-import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
 import '../assets/stylesheets/Home.css'
@@ -22,7 +21,6 @@ class Home extends PureComponent {
   render() {
     return(
       <div>
-        <img alt='dirk hartogh' className='headerImg' src={headerImg}/>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
             Hallo,

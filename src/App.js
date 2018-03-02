@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Reboot from 'material-ui/Reboot'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
+import Header from './components/UI/Header'
 import Navigation from './components/UI/Navigation'
 import Routes from './routes'
 
@@ -63,6 +64,7 @@ class App extends Component {
         <Reboot>
           <div className="App">
             <Navigation />
+            <Header />
             <Routes />
           </div>
         </Reboot>

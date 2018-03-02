@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
-import headerImg from '../assets/img/headerImg.jpg'
 import Typography from 'material-ui/Typography'
 
 const styles = ({
@@ -15,7 +14,6 @@ class WeeklyTasks extends PureComponent {
   render() {
     return(
       <div>
-        <img alt='dirk hartogh' className='headerImg' src={headerImg}/>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
             Taken

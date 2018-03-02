@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { FormHelperText, FormControl } from 'material-ui/Form'
-import Input, { InputLabel, InputAdornment } from 'material-ui/Input'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import { addGrocery } from '../../actions/grocerys/add'
@@ -36,7 +35,6 @@ export class AddGrocery extends PureComponent {
     return (
       <div className='addGroceryForm'>
         <form onSubmit={this.submitForm}>
-
           <FormControl>
             <TextField
               id='text'
