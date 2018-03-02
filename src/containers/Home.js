@@ -28,7 +28,7 @@ class Home extends PureComponent {
             Hallo,
           </Typography>
           <Typography variant='body1'>
-            Huishoud je huishouden, wat wil je precies doen?
+            Huishoud je huishouden.
           </Typography>
           <Button
             style={styles.button}
