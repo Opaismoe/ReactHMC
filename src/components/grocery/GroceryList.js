@@ -9,6 +9,7 @@ export const groceryShape = PropTypes.shape({
   _id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  userId: PropTypes.string.isRequired,  
   completed: PropTypes.bool,
 })
 
@@ -17,33 +18,52 @@ class GroceryList extends PureComponent {
     grocerys: PropTypes.arrayOf(groceryShape).isRequired,
   }
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       totalPrice: 0,
+       totalAmount: 10,
+    }
+    this.totalPrice = this.totalPrice.bind(this)
+  }
+  
+  
   componentWillMount() {
     this.props.fetch()
+    this.totalPrice()
   }
-
+  
+  //TODO refactor this 
   totalPrice() {
-    let totalAmount = 80
+    let total = this.state.totalPrice
     this.props.grocerys.map(grocery => {
-      return totalAmount -= grocery.price
+      return total += grocery.price
     })
-    return this.RenderTotalAmount(totalAmount)
+    this.setState({
+      totalAmount: this.state.totalAmount - total,
+      totalPrice: this.state.totalPrice + total
+    })
   }
 
-  RenderTotalAmount(totalAmount) {
-    console.log(totalAmount)
-    return <h1>{totalAmount}</h1>
-  }
+  render() {  
+    const { totalPrice, totalAmount } = this.state
 
-  render() {
     return (
       <div>
-        <button onClick={this.totalPrice.bind(this)}>click me for total price</button>
+        <button onClick={this.totalPrice}>click me for total price</button>
+          {this.props.grocerys.map(groc => {
+            console.log(groc.price)
+          })
+          }
         <Paper>
+          wat?
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell>Product</TableCell>
                 <TableCell numeric>Price</TableCell>
+                <TableCell numeric>User id</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -52,11 +72,14 @@ class GroceryList extends PureComponent {
                   <TableRow key={grocery._id}>
                     <TableCell>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
+                    <TableCell>{grocery.userId}</TableCell>
                   </TableRow>
                 );
               })}
             </TableBody>
           </Table>
+            <span style={{ float:'right' }}>total <h3>{totalPrice}</h3></span>
+            <span style={{ float:'left' }}>left in pot; <h3>{totalAmount}</h3></span>
         </Paper>
       </div>
     )

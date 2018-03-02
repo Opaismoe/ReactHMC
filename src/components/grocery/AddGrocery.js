@@ -15,6 +15,7 @@ export class AddGrocery extends PureComponent {
       price: 0,
       completed: false,
     }
+    this.submitForm = this.submitForm.bind(this)
   }
 
   handleChange = name => event => {
@@ -25,14 +26,15 @@ export class AddGrocery extends PureComponent {
 
   submitForm(event) {
     event.preventDefault()
-    this.props.addGrocery({ ...this.state})
+    this.props.addGrocery(this.state)
   }
 
   render() {
-    
+
     return (
       <div className='addGroceryForm'>
-        <form onSubmit={this.submitForm.bind(this)}>
+        <form onSubmit={this.submitForm}>
+
           <FormControl>
             <TextField
               id='text'
@@ -44,6 +46,7 @@ export class AddGrocery extends PureComponent {
               {this.state.textError}
             </FormHelperText>
           </FormControl>
+
           <FormControl>
             <InputLabel htmlFor="prijs" shrink={true}>Prijs</InputLabel>
             <Input
@@ -56,6 +59,7 @@ export class AddGrocery extends PureComponent {
           <FormHelperText id='price-error-text'>
             {this.state.priceError}
           </FormHelperText>
+          
           <Button type='submit'>Submit</Button>
         </form>
       </div>
