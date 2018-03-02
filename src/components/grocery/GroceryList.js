@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGrocerys } from '../../actions/grocerys/fetch'
+import { removeGrocery } from '../../actions/grocerys/remove'
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
 import Paper from 'material-ui/Paper'
 
@@ -14,6 +15,11 @@ export const groceryShape = PropTypes.shape({
 })
 
 class GroceryList extends PureComponent {
+  constructor(props) {
+    super(props)
+      this.removeGrocery = this.removeGrocery.bind(this)
+  }
+
   static propTypes = {
     grocerys: PropTypes.arrayOf(groceryShape).isRequired,
   }
@@ -46,8 +52,14 @@ class GroceryList extends PureComponent {
     })
   }
 
-  render() {  
-    const { totalPrice, totalAmount } = this.state
+  removeGrocery() {
+    const { id } = this.props.grocerys
+    console.log(id)
+    return false
+  }
+
+  render() {
+
 
     return (
       <div>
@@ -70,7 +82,7 @@ class GroceryList extends PureComponent {
               {this.props.grocerys.map(grocery => {
                 return (
                   <TableRow key={grocery._id}>
-                    <TableCell>{grocery.text}</TableCell>
+                    <TableCell onClick={this.removeGrocery}>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                     <TableCell>{grocery.userId}</TableCell>
                   </TableRow>
@@ -87,6 +99,6 @@ class GroceryList extends PureComponent {
 }
 
 const mapStateToProps = ({ grocerys }) => ({ grocerys })
-const mapDispatchToProps = { fetch: fetchGrocerys }
+const mapDispatchToProps = { fetch: fetchGrocerys, removeGrocery }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GroceryList)

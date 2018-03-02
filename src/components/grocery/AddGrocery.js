@@ -48,10 +48,11 @@ export class AddGrocery extends PureComponent {
           </FormControl>
 
           <FormControl>
-            <InputLabel htmlFor="prijs" shrink={true}>Prijs</InputLabel>
-            <Input
-              id="price"
+            <TextField
+              id='price'
               type='float'
+              label='prijs'
+
               onChange={this.handleChange('price')}
               startAdornment={<InputAdornment position="start">$</InputAdornment>}
             />
