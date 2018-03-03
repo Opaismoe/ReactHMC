@@ -36,6 +36,10 @@ class GroceryList extends PureComponent {
     this.props.fetch()
   }
 
+  componentWillReceiveProps() {
+    this.calcPrice()
+  }
+
   totalPrice(sum) {
     this.setState({
       totalAmount: this.state.totalAmount - sum,
