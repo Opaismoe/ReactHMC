@@ -19,7 +19,7 @@ class GroceryList extends PureComponent {
     super(props)
       this.state = {
         totalPrice: 0,
-        totalAmount: 10,
+        totalAmount: 50,
       }
       this.totalPrice = this.totalPrice.bind(this)
       this.removeGrocery = this.removeGrocery.bind(this)
@@ -30,10 +30,10 @@ class GroceryList extends PureComponent {
   }  
   
   componentWillMount() {
+    console.log('componentWillMount')
     this.props.fetch()
-    this.totalPrice()
   }
-  
+
   //TODO refactor this 
   totalPrice() {
     let total = this.state.totalPrice
@@ -44,6 +44,7 @@ class GroceryList extends PureComponent {
       totalAmount: this.state.totalAmount - total,
       totalPrice: this.state.totalPrice + total
     })
+    console.log(total)
   }
 
   removeGrocery() {
@@ -57,13 +58,7 @@ class GroceryList extends PureComponent {
 
     return (
       <div>
-        <button onClick={this.totalPrice}>click me for total price</button>
-          {this.props.grocerys.map(groc => {
-            return console.log(groc.price)
-          })
-          }
         <Paper>
-          wat?
           <Table>
             <TableHead>
               <TableRow>
@@ -76,6 +71,7 @@ class GroceryList extends PureComponent {
               {this.props.grocerys.map(grocery => {
                 return (
                   <TableRow key={grocery._id}>
+                  {console.log(grocery._id)}
                     <TableCell onClick={this.removeGrocery}>{grocery.text}</TableCell>
                     <TableCell numeric>{grocery.price}</TableCell>
                     <TableCell>{grocery.userId}</TableCell>

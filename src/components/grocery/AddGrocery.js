@@ -19,9 +19,9 @@ export class AddGrocery extends PureComponent {
 
   handleChange = name => event => {
     this.setState({
-      name: event.target.value
+      [name]: event.target.value
     })
-    console.log(name);
+    console.log([name]);
     
   }
 
