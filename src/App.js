@@ -3,6 +3,7 @@ import Reboot from 'material-ui/Reboot'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 import Header from './components/UI/Header'
 import Navigation from './components/UI/Navigation'
+import Loading from './components/UI/Loading'
 import Routes from './routes'
 
 const TitleFont =
@@ -64,6 +65,7 @@ class App extends Component {
         <Reboot>
           <div className="App">
             <Navigation />
+            <Loading />
             <Header />
             <Routes />
           </div>
