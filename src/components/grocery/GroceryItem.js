@@ -13,7 +13,7 @@ class GroceryItem extends PureComponent {
     return (
       <div className='backdrop'>
         <main  key={_id}>
-          <span className='groceryTitle'>name: {text}</span>
+          <span className='groceryTitle'>name: <strong>{text}</strong></span>
           <span className='groceryPrice'>$ {price}</span>
           <span className='groceryUser'>{user.name}</span>
         </main>
