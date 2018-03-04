@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { AddGrocery, GroceryList, GroceryItem }from '../components/grocery/'
+import { fetchGrocerys } from '../actions/grocerys/fetch'
 import Paper from 'material-ui/Paper'
-import { AddGrocery, GroceryList }from '../components/grocery/'
 import Typography from 'material-ui/Typography'
 import '../assets/stylesheets/Home.css'
 
@@ -16,7 +19,28 @@ const styles = ({
   },
 })
 
+export const groceryShape = PropTypes.shape({
+  _id: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  userId: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+})
+
 class Grocerys extends PureComponent {
+  static propTypes = {
+    ...groceryShape.isRequired,
+  }
+
+
+  componentWillMount() {
+    this.props.fetchGrocerys()
+  }
+
+  renderGrocerys(grocery, index) {
+    return <GroceryItem key={index} {...grocery} />
+  }
+
   render() {
     return(
       <div>
@@ -27,14 +51,18 @@ class Grocerys extends PureComponent {
           <Typography variant='body1'>
             Huishoudgeld
           </Typography>
-          <AddGrocery/>
-
-          <GroceryList/>
-          
+          <AddGrocery />
+          {this.props.grocerys.map(this.renderGrocerys)}
         </Paper>
       </div>
     )
   }
 }
 
-export default Grocerys
+const mapStateToProps = ({ grocerys }) => ({ grocerys })
+
+const mapDispatchToProps = {
+  fetchGrocerys,
+}
+
+ export default connect(mapStateToProps, mapDispatchToProps)(Grocerys)

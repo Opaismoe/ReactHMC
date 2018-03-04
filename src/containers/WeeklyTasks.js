@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
 
+
 const styles = ({
   paper: {
     margin: 60,
@@ -11,7 +12,10 @@ const styles = ({
 })
 
 class WeeklyTasks extends PureComponent {
+
+
   render() {
+
     return(
       <div>
         <Paper style={styles.paper}>

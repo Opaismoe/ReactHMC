@@ -8,15 +8,18 @@ import {
 export const FETCHED_GROCERYS = 'FETCHED_GROCERYS'
 
 const api = new API()
+const path = '/grocerys'
 
 export const fetchGrocerys = () => {
   return dispatch => {
     dispatch({ type: APP_LOADING })
 
-    const path = '/grocerys'
     api.get(path)
       .then(res => {
-        dispatch({ type: FETCHED_GROCERYS, payload: res.body })
+        dispatch({
+          type: FETCHED_GROCERYS,
+          payload: res.body
+        })
         dispatch({ type: APP_DONE_LOADING })
       })
       .catch(error => {
