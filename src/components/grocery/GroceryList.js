@@ -10,7 +10,7 @@ export const groceryShape = PropTypes.shape({
   _id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  userId: PropTypes.string.isRequired,  
+  userId: PropTypes.string.isRequired,
   completed: PropTypes.bool,
 })
 
@@ -28,16 +28,20 @@ class GroceryList extends PureComponent {
   }
 
   static propTypes = {
-    grocerys: PropTypes.arrayOf(groceryShape).isRequired,
-  }  
-  
+    _id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    userId: PropTypes.string.isRequired,
+    completed: PropTypes.bool,
+  }
+
   componentWillMount() {
     console.log('componentWillMount')
     this.props.fetch()
   }
 
   componentWillReceiveProps() {
-    this.calcPrice()
+    // this.calcPrice()
   }
 
   totalPrice(sum) {
