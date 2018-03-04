@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import { CircularProgress } from 'material-ui/Progress';
+import { LinearProgress } from 'material-ui/Progress'
 
 export class Loading extends PureComponent {
   static propTypes = {
@@ -14,7 +14,7 @@ export class Loading extends PureComponent {
 
     return (
       <div>
-        <CircularProgress thickness={7} />
+        <LinearProgress color='secondary' />
       </div>
     );
   }

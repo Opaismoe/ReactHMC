@@ -19,7 +19,7 @@ const styles = ({
 })
 
 class Home extends PureComponent {
-
+  //refactor this
   renderName() {
     const { currentUser } = this.props
     if (currentUser !== null) {

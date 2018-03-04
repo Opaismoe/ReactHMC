@@ -3,6 +3,7 @@ import Reboot from 'material-ui/Reboot'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 import Header from './components/UI/Header'
 import Navigation from './components/UI/Navigation'
+import Error from './components/UI/Error'
 import Loading from './components/UI/Loading'
 import Routes from './routes'
 
@@ -64,8 +65,9 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Reboot>
           <div className="App">
+            <Error />
+            <Loading className='loading' />
             <Navigation />
-            <Loading />
             <Header />
             <Routes />
           </div>
