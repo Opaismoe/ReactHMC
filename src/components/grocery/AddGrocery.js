@@ -13,7 +13,7 @@ export class AddGrocery extends PureComponent {
       text: '',
       price: 0,
       completed: false,
-      user: 'default'
+      user:''
     }
     this.submitForm = this.submitForm.bind(this)
   }
@@ -22,13 +22,11 @@ export class AddGrocery extends PureComponent {
     this.setState({
       [name]: event.target.value
     })
-    console.log([name]);
-
   }
 
   submitForm(event) {
     event.preventDefault()
-    this.props.addGrocery(this.state)
+    this.props.addGrocery({...this.state})
   }
 
   render() {

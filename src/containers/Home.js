@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import Paper from 'material-ui/Paper'
 import { Link } from 'react-router-dom'
 import Typography from 'material-ui/Typography'
@@ -18,6 +19,20 @@ const styles = ({
 })
 
 class Home extends PureComponent {
+
+  renderName() {
+    const { currentUser } = this.props
+    if (currentUser !== null) {
+      return <h1>{currentUser.name}</h1>
+    }
+    return <div>
+      <Typography variant='body1'>
+        <h1>Losssser!!</h1>
+        <p>doe maar eerst inloggen!</p>
+      </Typography>
+    </div>
+  }
+
   render() {
     return(
       <div>
@@ -25,6 +40,7 @@ class Home extends PureComponent {
           <Typography variant='display1'>
             Hallo,
           </Typography>
+            {this.renderName()}
           <Typography variant='body1'>
             Huishoud je huishouden.
           </Typography>
@@ -58,4 +74,6 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
+export default connect (mapStateToProps)(Home)

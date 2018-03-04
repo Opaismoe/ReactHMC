@@ -8,19 +8,20 @@ class GroceryItem extends PureComponent {
   }
 
   render() {
-    const { text, price, _id, user } = this.props
+    const { text, price, _id } = this.props
 
     return (
       <div className='backdrop'>
         <main  key={_id}>
           <span className='groceryTitle'>name: <strong>{text}</strong></span>
           <span className='groceryPrice'>$ {price}</span>
-          <span className='groceryUser'>{user.name}</span>
+          <span className='groceryUser'>{''}</span>
         </main>
       </div>
     )
   }
 }
+
 
 
 export default GroceryItem
