@@ -1,17 +1,18 @@
-import React, {PureComponent} from 'react'
+import React from 'react'
 import Button from 'material-ui/Button'
 import Snackbar from 'material-ui/Snackbar'
 import IconButton from 'material-ui/IconButton'
 import CloseIcon from 'material-ui-icons/Close'
 import { connect } from 'react-redux'
 import { clearError } from '../../actions/loading'
+import request from 'superagent'
 
-class Error extends PureComponent {
+class Error extends React.Component {
   state = {
     open: false
   }
 
-  componentWillReveiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     const { error } = nextProps
 
     if (!error) {
@@ -34,8 +35,7 @@ class Error extends PureComponent {
   render() {
     const { error } = this.props
     if (!error) return null
-
-    return(
+    return (
       <div>
         <Snackbar
           anchorOrigin={{
@@ -48,32 +48,34 @@ class Error extends PureComponent {
           SnackbarContentProps={{
             'aria-describedby': 'message-id'
           }}
-          message={<span id='message-id'>{error}</span>}
+          message={<span id="message-id">{error}</span>}
           action={[
             <Button
-              key='undo'
-              color='secondary'
-              size='small'
+              key="undo"
+              color="secondary"
+              size="small"
               onClick={this.handleClose}
-              >
+            >
               UNDO
             </Button>,
             <IconButton
-              key='close'
-              aria-label='Close'
-              color='inherit'
+              key="close"
+              aria-label="Close"
+              color="inherit"
               className={'close'}
               onClick={this.handleClose}
             >
-            <CloseIcon />
+              <CloseIcon />
             </IconButton>
           ]}
-          />
+        />
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ error }) => ({ error })
+const mapStateToProps = ({ error }) => ({
+  error
+})
 
-export default connect(mapStateToProps, { clearError })(Error)
+export default connect(mapStateToProps, { clearError, request })(Error)

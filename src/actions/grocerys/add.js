@@ -13,6 +13,8 @@ export const addGrocery = (newGrocery) => {
   return (dispatch) => {
     if (!api.isAuthenticated()) {
       dispatch(push('sign-in'))
+      // Refactor this so that you create and catch the error -> snackbar!
+      alert('first sign in')
       return
     }
     dispatch({ type: APP_LOADING })

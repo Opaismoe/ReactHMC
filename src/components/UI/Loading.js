@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import { LinearProgress } from 'material-ui/Progress'
 
-export class Loading extends PureComponent {
+class Loading extends PureComponent {
   static propTypes = {
     loading: PropTypes.bool,
     classes: PropTypes.object.isRequired

@@ -8,11 +8,12 @@ export const loading = (active = true) => ({
   type: active ? APP_LOADING : APP_DONE_LOADING
 })
 
-export const clearError = () => ({
-  type: CLEAR_LOAD_ERROR
+export const clearError = error => ({
+  type: CLEAR_LOAD_ERROR,
+  payload: error
 })
 
-export const showError = (error) => ({
+export const showError = error => ({
   type: LOAD_ERROR,
   payload: error
 })
