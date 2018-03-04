@@ -15,16 +15,3 @@ export default function(state = [], {type, payload} = {}) {
       return state
   }
 }
-
-
-
-
-
-
-
-// toggle
-// return state.map(grocery =>
-//   (grocery.id === payload.id)
-//   ? {...grocery, completed: !grocery.completed}
-//   : grocery
-// )
