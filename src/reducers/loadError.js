@@ -1,5 +1,5 @@
 // src/reducers/loadError.js
-import { LOAD_ERROR, LOAD_SUCCESS, CLEAR_LOAD_ERROR } from '../actions/loading'
+import { LOAD_ERROR, APP_DONE_LOADING, CLEAR_LOAD_ERROR } from '../actions/loading'
 
 export default (state = null, { type, payload } = {}) => {
   switch (type) {
@@ -7,7 +7,7 @@ export default (state = null, { type, payload } = {}) => {
       return '' + payload
 
     case CLEAR_LOAD_ERROR :
-    case LOAD_SUCCESS :
+    case APP_DONE_LOADING :
       return null
 
     default :

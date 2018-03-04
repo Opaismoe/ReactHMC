@@ -4,7 +4,6 @@ import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
-  LOAD_SUCCESS
 } from '../loading'
 import signIn from './sign-in'
 
@@ -19,7 +18,6 @@ export default (user) => {
     api.post('/users', user)
       .then((result) => {
         dispatch({ type: APP_DONE_LOADING })
-        dispatch({ type: LOAD_SUCCESS })
         dispatch(signIn(user)) // Sign in when sign up succeeded
       })
       .catch((error) => {

@@ -3,7 +3,6 @@ import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
-  LOAD_SUCCESS
 } from '../loading'
 
 export const ADD_GROCERY = 'ADD_GROCERY'
@@ -20,7 +19,6 @@ export const addGrocery = (newGrocery) => {
           payload: newGrocery
         })
         dispatch({ type: APP_DONE_LOADING })
-        dispatch({ type: LOAD_SUCCESS })
       })
       .catch((error) => {
         dispatch({ type: APP_DONE_LOADING })

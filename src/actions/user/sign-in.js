@@ -5,7 +5,6 @@ import {
   APP_LOADING,
   APP_DONE_LOADING,
   LOAD_ERROR,
-  LOAD_SUCCESS
 } from '../loading'
 import websocket from '../websocket'
 
@@ -20,7 +19,6 @@ export default ({ email, password}) => {
     api.authenticate(email, password)
       .then((res) => {
         dispatch({ type: APP_DONE_LOADING })
-        dispatch({ type: LOAD_SUCCESS })
 
         const jwt = res.body.token
 
