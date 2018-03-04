@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { AddGrocery, GroceryList, GroceryItem }from '../components/grocery/'
+import { AddGrocery, GroceryItem }from '../components/grocery/'
 import { fetchGrocerys } from '../actions/grocerys/fetch'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
@@ -23,7 +23,7 @@ export const groceryShape = PropTypes.shape({
   _id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  userId: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
 })
 

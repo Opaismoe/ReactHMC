@@ -1,0 +1,12 @@
+.groceryTitle {
+  font-size: 1.5em;
+  margin-right: 50px; }
+
+.groceryPrice {
+  font-size: 1em; }
+
+.backdrop {
+  background-color: #f0f2f4;
+  border-bottom: 1px dotted #949494;
+  border-left: 1px dotted #949494;
+  border-right: 1px dotted #949494; }

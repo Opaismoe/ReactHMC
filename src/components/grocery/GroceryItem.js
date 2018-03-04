@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { groceryShape } from '../../containers/Grocerys'
+import '../../assets/stylesheets/GroceryItem.css'
 
 class GroceryItem extends PureComponent {
   static propTypes = {
@@ -7,14 +8,15 @@ class GroceryItem extends PureComponent {
   }
 
   render() {
-    const { text, price, _id } = this.props
+    const { text, price, _id, user } = this.props
 
     return (
-      <div>
-        <p key={_id}>
-          <span className='groceryTitle' onClick={this.removeGrocery}>{text}</span>
-          <span className='groceryPrice'>{price}</span>
-        </p>
+      <div className='backdrop'>
+        <main  key={_id}>
+          <span className='groceryTitle'>name: {text}</span>
+          <span className='groceryPrice'>$ {price}</span>
+          <span className='groceryUser'>{user.name}</span>
+        </main>
       </div>
     )
   }

@@ -13,6 +13,7 @@ export class AddGrocery extends PureComponent {
       text: '',
       price: 0,
       completed: false,
+      user: 'default'
     }
     this.submitForm = this.submitForm.bind(this)
   }
@@ -22,7 +23,7 @@ export class AddGrocery extends PureComponent {
       [name]: event.target.value
     })
     console.log([name]);
-    
+
   }
 
   submitForm(event) {
@@ -58,7 +59,7 @@ export class AddGrocery extends PureComponent {
           <FormHelperText id='price-error-text'>
             {this.state.priceError}
           </FormHelperText>
-          
+
           <Button type='submit'>Submit</Button>
         </form>
       </div>
