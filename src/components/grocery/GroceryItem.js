@@ -7,7 +7,7 @@ class GroceryItem extends PureComponent {
   componentWillReceiveProps() {
 
   }
-  
+
   toggleDone(event) {
     event.preventDefault()
     const completed = {
@@ -24,10 +24,9 @@ class GroceryItem extends PureComponent {
         <main  onClick={this.toggleDone.bind(this)} key={_id}>
           {!completed ?
             <span className='title-completed'>name: <strong>{text}</strong></span>
-         :  <span className='title-notCompleted'>name: <strong>{text}</strong></span>
-         }
+          : <span className='title-notCompleted'>name: <strong>{text}</strong></span>
+          }
           <span className='groceryPrice'>$ {price}</span>
-          <span className='groceryUser'>{''}</span>
         </main>
       </div>
     )
