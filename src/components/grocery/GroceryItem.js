@@ -4,10 +4,6 @@ import { toggleDone } from '../../actions/grocerys/toggle'
 import '../../assets/stylesheets/GroceryItem.css'
 
 class GroceryItem extends PureComponent {
-  componentWillReceiveProps() {
-
-  }
-
   toggleDone(event) {
     event.preventDefault()
     const completed = {

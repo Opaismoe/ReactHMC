@@ -7,7 +7,8 @@ import {
   SignIn,
   SignUp,
   Grocerys,
-  WeeklyTasks
+  WeeklyTasks,
+  Cats
 } from './containers'
 
 export default class Routes extends Component {
@@ -17,6 +18,7 @@ export default class Routes extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/grocerys" component={Grocerys} />
         <Route path="/tasks" component={WeeklyTasks} />
+        <Route path="/CatsArePeopleToo" component={Cats} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/sign-up" component={SignUp} />
       </div>
