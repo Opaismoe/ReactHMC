@@ -23,12 +23,12 @@ class Home extends PureComponent {
     const { currentUser } = this.props
 
     if (!this.props.signedIn) return (
-    <div style={{marginTop:60}}>
+    <div style={{marginTop:150}}>
       <Typography variant='display1' align='center'>
-        Mag niet!!
+        Log in!
       </Typography>
       <Typography variant='body1' align='center'>
-        je moet eerst inloggen!
+        of maak een account
       </Typography>
     </div> )
 
