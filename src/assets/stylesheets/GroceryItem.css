@@ -1,4 +1,10 @@
-.groceryTitle {
+.title-completed {
+  font-size: 1.2em;
+  margin-right: 50px;
+  margin-left: 50px; }
+
+.title-notCompleted {
+  background-color: red;
   font-size: 1.2em;
   margin-right: 50px;
   margin-left: 50px; }

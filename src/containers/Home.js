@@ -19,7 +19,7 @@ const styles = ({
 })
 
 class Home extends PureComponent {
-  render() {
+    render() {
     const { currentUser } = this.props
 
     if (!this.props.signedIn) return (

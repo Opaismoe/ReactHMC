@@ -8,17 +8,14 @@ import {
 export const REMOVE_GROCERY = 'REMOVE_GROCERY'
 const api = new API()
 
-export const removeGrocery = (id) => {
-  console.log(id)
+export const removeGrocery = (groceryId) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
-
-    api.delete('/grocerys', id)
-      console.log(id)
+    api.delete(`/grocerys/${groceryId}`)
       .then(result => {
         dispatch({
           type: REMOVE_GROCERY,
-          payload: id
+          payload: result.body
         })
         dispatch({ type: APP_DONE_LOADING })
       })
