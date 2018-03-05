@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { replace } from 'react-router-redux'
 import Paper from 'material-ui/Paper'
 import { Link } from 'react-router-dom'
 import Typography from 'material-ui/Typography'
