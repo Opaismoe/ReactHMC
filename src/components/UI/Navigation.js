@@ -60,10 +60,8 @@ class Navigation extends PureComponent {
             to='/'>
             Household Management System
           </Typography>
-          {signedIn ?
-            <Button variant='raised' color='secondary'  style={{float:'right', width:100, marginLeft:10}} onClick={this.signOut.bind(this)}>Sign out</Button> :
-            <Button variant='raised' color='secondary' style={{float:'right'}} onClick={this.signIn.bind(this)}>Sign in</Button>
-          }
+          {signedIn ? <Button variant='raised' color='secondary'  style={{float:'right', width:100, marginLeft:10}} onClick={this.signOut.bind(this)}>Sign out</Button> :
+            <Button variant='raised' color='secondary' style={{float:'right'}} onClick={this.signIn.bind(this)}>Sign in</Button>}
           {signedIn ? null : <Button variant='raised' color='secondary'  style={{float:'right', width:100, marginLeft:10}} onClick={this.signUp}>Sign up</Button> }
         </Toolbar>
       </AppBar>

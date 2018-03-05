@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { replace } from 'react-router-redux'
 import Paper from 'material-ui/Paper'
 import { Link } from 'react-router-dom'
 import Typography from 'material-ui/Typography'
@@ -19,28 +20,26 @@ const styles = ({
 })
 
 class Home extends PureComponent {
-  //refactor this
-  renderName() {
-    const { currentUser } = this.props
-    if (currentUser !== null) {
-      return <h1>{currentUser.name}</h1>
-    }
-    return <div>
-      <Typography variant='body1'>
-        <h1>Losssser!!</h1>
-        <p>doe maar eerst inloggen!</p>
-      </Typography>
-    </div>
-  }
-
   render() {
+    const { currentUser } = this.props
+
+    if (!this.props.signedIn) return (
+    <div style={{marginTop:60}}>
+      <Typography variant='display1' align='center'>
+        Mag niet!!
+      </Typography>
+      <Typography variant='body1' align='center'>
+        je moet eerst inloggen!
+      </Typography>
+    </div> )
+
     return(
       <div>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
             Hallo,
           </Typography>
-            {this.renderName()}
+            {currentUser.name}
           <Typography variant='body1'>
             Huishoud je huishouden.
           </Typography>
@@ -74,6 +73,9 @@ class Home extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
+const mapStateToProps = ({ currentUser }) => ({
+  currentUser,
+  signedIn: !!currentUser && !!currentUser._id
+})
 
 export default connect (mapStateToProps)(Home)
