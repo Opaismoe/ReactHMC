@@ -6,10 +6,9 @@ import { LinearProgress } from 'material-ui/Progress'
 class Loading extends PureComponent {
   static propTypes = {
     loading: PropTypes.bool,
-    classes: PropTypes.object.isRequired
   }
   render() {
-    const { loading, classes } = this.props
+    const { loading } = this.props
     if (!loading) return null
 
     return (
