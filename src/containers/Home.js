@@ -36,9 +36,8 @@ class Home extends PureComponent {
       <div>
         <Paper style={styles.paper}>
           <Typography variant='display1'>
-            Hallo,
+            {`Hallo, ${ currentUser.name }`}
           </Typography>
-            {currentUser.name}
           <Typography variant='body1'>
             Huishoud je huishouden.
           </Typography>
