@@ -9,7 +9,7 @@ import request from 'superagent'
 
 class Error extends React.Component {
   state = {
-    open: false
+    open: true
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,6 +34,9 @@ class Error extends React.Component {
 
   render() {
     const { error } = this.props
+    
+    // error is not getting to this point
+    console.log(error)
     if (!error) return null
     return (
       <div>

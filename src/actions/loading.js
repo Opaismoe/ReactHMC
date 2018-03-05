@@ -15,5 +15,5 @@ export const clearError = error => ({
 
 export const showError = error => ({
   type: LOAD_ERROR,
-  payload: error
+  payload: error.message,
 })

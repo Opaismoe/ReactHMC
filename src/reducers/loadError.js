@@ -1,13 +1,9 @@
-// src/reducers/loadError.js
 import { LOAD_ERROR, APP_DONE_LOADING, CLEAR_LOAD_ERROR } from '../actions/loading'
 
-export default (state = 'null errrrrorrrr', { type, payload } = {}) => {
+export default function (state = null, { type, payload } = {}) {
   switch (type) {
     case LOAD_ERROR:
-    if (payload instanceof Error) {
-      return payload.response.body.message
-    }
-    return payload
+      return '' + payload
 
     case CLEAR_LOAD_ERROR:
     return null
