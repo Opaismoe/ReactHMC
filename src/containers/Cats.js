@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
 import CatItem from '../components/cats/CatItem'
 import CatData from '../components/cats/CatData'
+import '../assets/stylesheets/Cats.sass'
 
 const styles = ({
   paper: {

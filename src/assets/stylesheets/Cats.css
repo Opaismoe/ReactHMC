@@ -1,0 +1,20 @@
+.cats-enter {
+  opacity: 0.01; }
+
+.cats-enter.cats-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in; }
+
+.cats-leave {
+  opacity: 1; }
+
+.cats-leave.cats-leave-active {
+  opacity: 0.01;
+  transition: opacity 10000ms ease-in; }
+
+.cats-appear {
+  opacity: 0.01; }
+
+.cats-appear.cats-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in; }
