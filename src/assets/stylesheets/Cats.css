@@ -1,20 +1,21 @@
-.cats-enter {
-  opacity: 0.01; }
+.catContainer {
+  margin: 20px 10px; }
 
-.cats-enter.cats-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in; }
+.catCard {
+  color: #ff0000;
+  padding: 5px;
+  min-width: 250px;
+  margin: 10px auto;
+  animation-name: catCard;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  max-width: 80%; }
 
-.cats-leave {
-  opacity: 1; }
+.catCardImg {
+  max-width: 60%; }
 
-.cats-leave.cats-leave-active {
-  opacity: 0.01;
-  transition: opacity 10000ms ease-in; }
-
-.cats-appear {
-  opacity: 0.01; }
-
-.cats-appear.cats-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in; }
+@keyframes catCard {
+  0% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }

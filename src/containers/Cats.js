@@ -21,10 +21,12 @@ class Cats extends PureComponent {
   render() {
     return (
       <Paper style={styles.paper}>
-        <Typography className='cats' variant='display1'>
+        <Typography className='catsContainerTitle' variant='display1'>
           Cats are people too!
         </Typography>
-        {CatData.map(this.renderCats)}
+        <div className='catContainer'>
+          {CatData.map(this.renderCats)}
+        </div>
       </Paper>
     )
   }
