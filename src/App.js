@@ -64,10 +64,12 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <Reboot>
-          <div className="App">
+          <div className="App" style={{ zIndex: 1}}>
             <Error />
-            <Loading className='loading' />
             <Navigation />
+            <div style={{ zIndex: 'auto', position: 'absolute', top: 10, left: 10 }} >
+              <Loading/>
+            </div>
             <Header />
             <Routes />
           </div>

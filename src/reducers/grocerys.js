@@ -12,8 +12,8 @@ export default function(state = [], {type, payload} = {}) {
     case REMOVE_GROCERY:
       return {...payload}.concat(state)
     case TOGGLE_DONE:
-      const completed = state.filter(gro => gro._id !== payload._id)
-      return completed.concat(payload)
+      const toggled = state.filter(grocery => grocery._id !== payload._id)
+      return toggled.concat(payload)
     default:
       return state
   }
