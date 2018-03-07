@@ -20,10 +20,10 @@ export const addGrocery = (newGrocery) => {
     dispatch({ type: APP_LOADING })
 
     api.post('/grocerys', newGrocery)
-      .then(result => {
+      .then(res => {
         dispatch({
           type: ADD_GROCERY,
-          payload: newGrocery
+          payload: res.body
         })
         dispatch({ type: APP_DONE_LOADING })
       })
