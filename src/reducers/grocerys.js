@@ -13,7 +13,8 @@ export default function(state = [], {type, payload} = {}) {
     case REMOVE_GROCERY:
       return {...payload}.concat(state)
     case TOGGLE_DONE:
-      return state
+      console.log(payload)
+      return {...payload}.concat(state)
     default:
       return state
   }

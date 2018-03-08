@@ -7,9 +7,6 @@ import Error from './components/UI/Error'
 import Loading from './components/UI/Loading'
 import Routes from './routes'
 
-const TitleFont =
-  '"Bolts", Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-
 const theme = createMuiTheme({
   overrides: {
     MuiChip: {
@@ -41,17 +38,14 @@ const theme = createMuiTheme({
     fontFamily:
       '"Roboto, "Helvetica Neue", Arial, sans-serif',
     headline: {
-      fontFamily: TitleFont,
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 400
     },
     display1: {
-      fontFamily: TitleFont,
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 400
     },
     display2: {
-      fontFamily: TitleFont,
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 400
     }
@@ -66,9 +60,9 @@ class App extends Component {
         <Reboot>
           <div className="App">
             <Error />
-            <Loading className='loading' />
             <Navigation />
             <Header />
+            <Loading className='loading' />
             <Routes />
           </div>
         </Reboot>
