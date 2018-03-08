@@ -32,13 +32,13 @@ class Grocerys extends PureComponent {
     ...groceryShape.isRequired,
   }
 
-
   componentWillMount() {
     this.props.fetchGrocerys()
   }
 
-  renderGrocerys(grocery, index) {
-    return <GroceryItem key={index} {...grocery} />
+  renderGrocerys(grocery) {
+    const id = grocery._id
+    return <GroceryItem key={id} {...grocery} />
   }
 
   render() {
