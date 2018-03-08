@@ -31,4 +31,4 @@ class GroceryItem extends PureComponent {
 
 const mapStateToProps = ({ grocerys }) => ({ grocerys })
 
-export default connect(mapStateToProps, {toggleDone})(GroceryItem)
+export default connect(mapStateToProps, { toggleDone})(GroceryItem)
