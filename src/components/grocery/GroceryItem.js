@@ -31,8 +31,8 @@ class GroceryItem extends PureComponent {
       <div className='backdrop'>
         <main  onClick={this.toggleDone} key={_id}>
           {!completed ?
-            <span className='title-completed'>name: <strong>{text}</strong></span>
-          : <span className='title-notCompleted'>name: <strong>{text}</strong></span>
+          <span className='title-notCompleted'>name: <strong>{text}</strong></span>
+          :<span className='title-completed'>name: <strong>{text}</strong></span>
           }
           <span className='groceryPrice'>$ {price}</span>
         </main>
@@ -45,4 +45,4 @@ const mapStateToProps = ({ grocerys }) => ({
   grocerys
 })
 
-export default connect(mapStateToProps, {toggleDone})(GroceryItem)
+export default connect(mapStateToProps, { toggleDone})(GroceryItem)

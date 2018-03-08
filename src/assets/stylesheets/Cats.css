@@ -1,0 +1,21 @@
+.catContainer {
+  margin: 20px 10px; }
+
+.catCard {
+  color: #ff0000;
+  padding: 5px;
+  min-width: 250px;
+  margin: 10px auto;
+  animation-name: catCard;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  max-width: 80%; }
+
+.catCardImg {
+  max-width: 60%; }
+
+@keyframes catCard {
+  0% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
