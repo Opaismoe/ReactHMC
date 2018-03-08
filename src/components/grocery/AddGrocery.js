@@ -4,6 +4,7 @@ import { FormHelperText, FormControl } from 'material-ui/Form'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import { addGrocery } from '../../actions/grocerys/add'
+import validate from 'validate.js'
 import '../../assets/stylesheets/AddGrocery.css'
 
 export class AddGrocery extends PureComponent {
@@ -22,11 +23,89 @@ export class AddGrocery extends PureComponent {
     this.setState({
       [name]: event.target.value
     })
+
+    switch (name) {
+      case 'name':
+        this.validateName(event.target.value)
+        break
+      case 'price':
+        this.validatePrice(event.target.value)
+        break
+      default:
+        return false
+    }
+  }
+
+  validateAll() {
+    const {
+      text,
+      price,
+    } = this.state
+    return (
+      this.validateName(text) &&
+      this.validatePrice(price)
+    )
+  }
+
+  validateName(name) {
+    const validationMsg = validate.single(name, {
+      presence: true,
+      length: {
+        minimum: 2,
+        message: "Lijkt mij wat te kort voor een naam"
+      }
+    })
+
+    if (!!validationMsg) {
+      this.setState({
+        textError: validationMsg
+      })
+      return false
+    }
+
+    this.setState({
+      textError: null
+    })
+    return true
+  }
+
+  validatePrice(price) {
+    const validationMsg = validate.single(price, {
+      presence: true,
+      numericality: {
+        onlyInteger: true,
+        greaterThan: 0,
+        lessThanOrEqualTo: 300,
+      }
+    })
+
+    if (!!validationMsg) {
+      this.setState({
+        priceError: validationMsg
+      })
+      return false
+    }
+
+    this.setState({
+      priceError: null
+    })
+    return true
   }
 
   submitForm(event) {
     event.preventDefault()
-    this.props.addGrocery({...this.state})
+    const {
+      text,
+      price,
+    } = this.state
+
+    if (this.validateAll()) {
+      const grocery = {
+        text: text,
+        price: price
+      }
+      this.props.addGrocery(grocery)
+    }
   }
 
   render() {
@@ -45,8 +124,7 @@ export class AddGrocery extends PureComponent {
               {this.state.textError}
             </FormHelperText>
           </FormControl>
-
-          <FormControl>
+          <FormControl className='inputPrice'>
             <TextField
               id='price'
               type='float'

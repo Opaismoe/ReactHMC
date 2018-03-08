@@ -6,3 +6,8 @@
   border-top-left-radius: 2px;
   box-shadow: 0px 0px 2px #859ca2;
   border: 1px solid #8a9490; }
+
+.inputPrice {
+  margin-left: 5px;
+  min-width: 5%;
+  max-width: 5%; }
